@@ -1,111 +1,93 @@
-export enum SessionState {
+export declare enum SessionState {
   Invalid = 0,
-  GetInCar,
-  Warmup,
-  ParadeLaps,
-  Racing,
-  Checkered,
-  CoolDown,
+  GetInCar = 1,
+  Warmup = 2,
+  ParadeLaps = 3,
+  Racing = 4,
+  Checkered = 5,
+  CoolDown = 6,
 }
-
-export enum GlobalFlags {
-  // Global
-  Checkered = 0x00000001,
-  White = 0x00000002,
-  Green = 0x00000004,
-  Yellow = 0x00000008,
-  Red = 0x00000010,
-  Blue = 0x00000020,
-  Debris = 0x00000040,
-  Crossed = 0x00000080,
-  YellowWaving = 0x00000100,
-  OneLapToGreen = 0x00000200,
-  GreenHeld = 0x00000400,
-  TenToGo = 0x00000800,
-  FiveToGo = 0x00001000,
-  RandomWaving = 0x00002000,
-  Caution = 0x00004000,
-  CautionWaving = 0x00008000,
-
-  // Drivers black flags
-  Black = 0x00010000,
-  Disqualify = 0x00020000,
-  Servicible = 0x00040000,
-  Furled = 0x00080000,
-  Repair = 0x00100000,
-
-  // Start lights
-  StartHidden = 0x10000000,
-  StartReady = 0x20000000,
-  StartSet = 0x40000000,
-  StartGo = 0x80000000,
+export declare enum GlobalFlags {
+  Checkered = 1,
+  White = 2,
+  Green = 4,
+  Yellow = 8,
+  Red = 16,
+  Blue = 32,
+  Debris = 64,
+  Crossed = 128,
+  YellowWaving = 256,
+  OneLapToGreen = 512,
+  GreenHeld = 1024,
+  TenToGo = 2048,
+  FiveToGo = 4096,
+  RandomWaving = 8192,
+  Caution = 16384,
+  CautionWaving = 32768,
+  Black = 65536,
+  Disqualify = 131072,
+  Servicible = 262144,
+  Furled = 524288,
+  Repair = 1048576,
+  StartHidden = 268435456,
+  StartReady = 536870912,
+  StartSet = 1073741824,
+  StartGo = 2147483648,
 }
-
-export enum PitSvFlags {
-  LFTireChange = 0x0001,
-  RFTireChange = 0x0002,
-  LRTireChange = 0x0004,
-  RRTireChange = 0x0008,
-  // Non-tires
-  FuelFill = 0x0010,
-  WindshieldTearoff = 0x0020,
-  FastRepair = 0x0040,
+export declare enum PitSvFlags {
+  LFTireChange = 1,
+  RFTireChange = 2,
+  LRTireChange = 4,
+  RRTireChange = 8,
+  FuelFill = 16,
+  WindshieldTearoff = 32,
+  FastRepair = 64,
 }
-
-export enum PitSvStatus {
-  // Status
+export declare enum PitSvStatus {
   None = 0,
-  InProgress,
-  Complete,
-
-  // Errors
+  InProgress = 1,
+  Complete = 2,
   TooFarLeft = 100,
-  TooFarRight,
-  TooFarForward,
-  TooFarBack,
-  BadAngle,
-  CantFixThat,
+  TooFarRight = 101,
+  TooFarForward = 102,
+  TooFarBack = 103,
+  BadAngle = 104,
+  CantFixThat = 105,
 }
-
-export enum PaceMode {
+export declare enum PaceMode {
   SingleFileStart = 0,
-  DoubleFileStart,
-  SingleFileRestart,
-  DoubleFileRestart,
-  NotPacing,
+  DoubleFileStart = 1,
+  SingleFileRestart = 2,
+  DoubleFileRestart = 3,
+  NotPacing = 4,
 }
-
-export enum PaceFlags {
-  EndOfLine = 0x01,
-  FreePass = 0x02,
-  WavedAround = 0x04,
+export declare enum PaceFlags {
+  EndOfLine = 1,
+  FreePass = 2,
+  WavedAround = 4,
 }
-
-export enum CarLeftRight {
-  Off,
+export declare enum CarLeftRight {
+  Off = 0,
   /** No cars around us */
-  Clear,
+  Clear = 1,
   /** Car to our left */
-  CarLeft,
+  CarLeft = 2,
   /** Car to our right */
-  CarRight,
+  CarRight = 3,
   /** Cars on both sides  */
-  CarLeftRight,
+  CarLeftRight = 4,
   /** 2 cars to our left */
-  Cars2Left,
+  Cars2Left = 5,
   /** 2 cars to our right */
-  Cars2Right,
+  Cars2Right = 6,
 }
-
-export enum TrackLocation {
+export declare enum TrackLocation {
   NotInWorld = -1,
-  OffTrack,
-  InPitStall,
-  ApproachingPits,
-  OnTrack,
+  OffTrack = 0,
+  InPitStall = 1,
+  ApproachingPits = 2,
+  OnTrack = 3,
 }
-
-// Enums
 export type VarTypes = {
   0: string;
   1: boolean;
@@ -114,190 +96,178 @@ export type VarTypes = {
   4: number;
   5: number;
 };
-
-export enum BroadcastMessages {
+export declare enum BroadcastMessages {
   /** Switch the camera position. */
   CameraSwitchPos = 0,
   /** Switch the driver number to follow.  */
-  CameraSwitchNum,
+  CameraSwitchNum = 1,
   /** Change the camera state. */
-  CameraSetState,
+  CameraSetState = 2,
   /** Change the play speed of a replay. */
-  ReplaySetPlaySpeed,
+  ReplaySetPlaySpeed = 3,
   /** Jump to a different part of the replay. */
-  ReplaySetPlayPosition,
+  ReplaySetPlayPosition = 4,
   /** Enter replay search mode. */
-  ReplaySearch,
+  ReplaySearch = 5,
   /** Change the replay state.  */
-  ReplaySetState,
+  ReplaySetState = 6,
   /** Trigger a texture reload. */
-  ReloadTextures,
+  ReloadTextures = 7,
   /** Broadcast a chat command. */
-  ChatCommand,
+  ChatCommand = 8,
   /** Broadcast a pit command. */
-  PitCommand,
+  PitCommand = 9,
   /** Broadcast a telemetry command. */
-  TelemCommand,
+  TelemCommand = 10,
   /** Broadcast a force feedback command. */
-  FFBCommand,
+  FFBCommand = 11,
   /** Trigger searching to a replay time. */
-  ReplaySearchSessionTime,
+  ReplaySearchSessionTime = 12,
   /** Trigger video capture. */
-  VideoCapture,
+  VideoCapture = 13,
   /** Unused. */
-  Last,
+  Last = 14,
 }
-
-export enum CameraState {
+export declare enum CameraState {
   /** the camera tool can only be activated if viewing the session screen (out of car) */
-  irsdk_IsSessionScreen = 0x0001,
+  irsdk_IsSessionScreen = 1,
   /** the scenic camera is active (no focus car) */
-  irsdk_IsScenicActive = 0x0002,
+  irsdk_IsScenicActive = 2,
   /** CAN be changed with a broadcast message */
-  irsdk_CamToolActive = 0x0004,
+  irsdk_CamToolActive = 4,
   /** CAN be changed with a broadcast message */
-  irsdk_UIHidden = 0x0008,
+  irsdk_UIHidden = 8,
   /** CAN be changed with a broadcast message */
-  irsdk_UseAutoShotSelection = 0x0010,
+  irsdk_UseAutoShotSelection = 16,
   /** CAN be changed with a broadcast message */
-  irsdk_UseTemporaryEdits = 0x0020,
+  irsdk_UseTemporaryEdits = 32,
   /** CAN be changed with a broadcast message */
-  irsdk_UseKeyAcceleration = 0x0040,
+  irsdk_UseKeyAcceleration = 64,
   /** CAN be changed with a broadcast message */
-  irsdk_UseKey10xAcceleration = 0x0080,
+  irsdk_UseKey10xAcceleration = 128,
   /** CAN be changed with a broadcast message */
-  irsdk_UseMouseAimMode = 0x0100,
+  irsdk_UseMouseAimMode = 256,
 }
-
-export enum ChatCommand {
+export declare enum ChatCommand {
   /** Number from 1-15, representing the chat macros.  */
   Macro = 0,
   /** Open up new chat window. */
-  BeginChat,
+  BeginChat = 1,
   /** Reply to last private chat. */
-  Reply,
+  Reply = 2,
   /** Close chat. */
-  Cancel,
+  Cancel = 3,
 }
-
 /** Only works when the driver is in the car! */
-export enum PitCommand {
+export declare enum PitCommand {
   /** Clear all pit checkboxes */
   Clear = 0,
   /** Clean the winshield, using one tear off */
-  WS,
+  WS = 1,
   /** Add fuel, optionally specify the amount to add in liters or pass '0' to use existing amount */
-  Fuel,
+  Fuel = 2,
   /** Change the left front tire, optionally specifying the pressure in KPa or pass '0' to use existing pressure */
-  LF,
+  LF = 3,
   /** right front */
-  RF,
+  RF = 4,
   /** left rear */
-  LR,
+  LR = 5,
   /** right rear */
-  RR,
+  RR = 6,
   /** Clear tire pit checkboxes */
-  ClearTires,
+  ClearTires = 7,
   /** Request a fast repair */
-  FR,
+  FR = 8,
   /** Uncheck Clean the windshield checkbox */
-  ClearWS,
+  ClearWS = 9,
   /** Uncheck request a fast repair */
-  ClearFR,
+  ClearFR = 10,
   /** Uncheck add fuel */
-  ClearFuel,
+  ClearFuel = 11,
 }
-
-export enum TelemetryCommand {
+export declare enum TelemetryCommand {
   /** Turn telemetry recording off */
   Stop = 0,
   /** Turn telemetry recording on */
-  Start,
+  Start = 1,
   /** Write current file to disk and start a new one */
-  Restart,
+  Restart = 2,
 }
-
-export enum ReplayStateCommand {
+export declare enum ReplayStateCommand {
   /** clear any data in the replay tape */
   EraseTape = 0,
   /** unused place holder */
-  Last,
+  Last = 1,
 }
-
-export enum ReloadTexturesCommand {
+export declare enum ReloadTexturesCommand {
   /** reload all textures */
   All = 0,
   /** reload only textures for the specific car index */
-  CarIndex,
+  CarIndex = 1,
 }
-
-export enum ReplaySearchCommand {
+export declare enum ReplaySearchCommand {
   /** Start of session */
   ToStart = 0,
   /** End of session */
-  ToEnd,
+  ToEnd = 1,
   /** Previous session */
-  PrevSession,
+  PrevSession = 2,
   /** Next session */
-  NextSession,
+  NextSession = 3,
   /** Previous lap */
-  PrevLap,
+  PrevLap = 4,
   /** Next lap */
-  NextLap,
+  NextLap = 5,
   /** Previous frame */
-  PrevFrame,
+  PrevFrame = 6,
   /** Next frame */
-  NextFrame,
+  NextFrame = 7,
   /** Previous incident */
-  PrevIncident,
+  PrevIncident = 8,
   /** Next incident */
-  NextIncident,
+  NextIncident = 9,
   /** Unused */
-  Last,
+  Last = 10,
 }
-
-export enum ReplayPositionCommand {
+export declare enum ReplayPositionCommand {
   /** Beginning of the replay */
   Begin = 0,
   /** Current position in the replay */
-  Current,
+  Current = 1,
   /** End of the replay */
-  End,
+  End = 2,
   /** Unused */
-  Last,
+  Last = 3,
 }
-
-export enum FFBCommand {
+export declare enum FFBCommand {
   /** Set the maximum force when mapping steering torque force to direct input units (float in Nm) */
   MaxForce = 0,
   /** Unused */
-  Last,
+  Last = 1,
 }
-
 /**
  * Used with BroadcastMessages.CameraSwitchPos and BroadcastMessages.CameraSwitchNum.
  * Pass these in for the first parameter to select the 'focus at' types in the camera system.
  * @todo: Not sure this will work with TS like it does in C++ :D
  */
-export enum CameraFocusCommand {
+export declare enum CameraFocusCommand {
   FocusAtIncident = -3,
   FocusAtLeader = -2,
   FocusAtExiting = -1,
   /** FocusAtDriver + car number... */
   FocusAtDriver = 0,
 }
-
-export enum VideoCaptureCommand {
+export declare enum VideoCaptureCommand {
   /** save a screenshot to disk */
   TriggerScreenShot = 0,
   /** start capturing video */
-  StartVideoCapture,
+  StartVideoCapture = 1,
   /** stop capturing video */
-  EndVideoCapture,
+  EndVideoCapture = 2,
   /** toggle video capture on/off */
-  ToggleVideoCapture,
+  ToggleVideoCapture = 3,
   /** show video timer in upper left corner of display */
-  ShowVideoTimer,
+  ShowVideoTimer = 4,
   /** hide video timer */
-  HideVideoTimer,
+  HideVideoTimer = 5,
 }
