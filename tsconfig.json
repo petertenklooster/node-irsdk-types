@@ -1,0 +1,10 @@
+{
+  "include": ["src/**/*.ts"],
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "declarationDir": "dist"
+  }
+}

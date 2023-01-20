@@ -4,7 +4,16 @@
   "description": "Types for Node.js iRacing SDK wrapper",
   "main": "",
   "types": "index.d.ts",
-  "scripts": {},
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf build dist",
+    "lint": "eslint ./src --ext .js,.ts",
+    "prepack": "npm build"
+  },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
 }
