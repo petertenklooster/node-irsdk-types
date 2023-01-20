@@ -1,0 +1,10 @@
+{
+  "name": "@types/node-irsdk",
+  "version": "1.0.0",
+  "description": "Types for Node.js iRacing SDK wrapper",
+  "main": "",
+  "types": "index.d.ts",
+  "scripts": {},
+  "author": "",
+  "license": "MIT"
+}
