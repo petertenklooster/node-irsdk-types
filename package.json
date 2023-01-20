@@ -1,5 +1,5 @@
 {
-  "name": "node-irsdk-types",
+  "name": "@types/node-irsdk",
   "version": "1.0.0",
   "description": "Types for Node.js iRacing SDK wrapper",
   "main": "",
