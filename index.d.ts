@@ -241,6 +241,9 @@ declare module 'node-irsdk' {
     dpLFTireChange: number;
     dpRRTireChange: number;
     dpLRTireChange: number;
+    dpLTireChange: number;
+    dpRTireChange: number;
+    dpTireChange: number;
     dpFuelFill: number;
     dpFuelAddKg: number;
     dpFastRepair: number;
@@ -248,6 +251,7 @@ declare module 'node-irsdk' {
     dpRFTireColdPress: number;
     dpLRTireColdPress: number;
     dpRRTireColdPress: number;
+    dpWindshieldTearoff: number;
     WaterTemp: number;
     WaterLevel: number;
     FuelPress: number;
