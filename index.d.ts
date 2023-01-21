@@ -41,8 +41,8 @@ declare module 'node-irsdk' {
     PlayerCarPosition: number;
     PlayerCarClassPosition: number;
     PlayerCarClass: number;
-    PlayerTrackSurface: number;
-    PlayerTrackSurfaceMaterial: number;
+    PlayerTrackSurface: string;
+    PlayerTrackSurfaceMaterial: string;
     PlayerCarIdx: number;
     PlayerCarTeamIncidentCount: number;
     PlayerCarMyIncidentCount: number;
