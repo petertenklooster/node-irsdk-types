@@ -58,7 +58,7 @@ declare module 'node-irsdk' {
     CarIdxLap: { [key: number]: number };
     CarIdxLapCompleted: { [key: number]: number };
     CarIdxLapDistPct: { [key: number]: number };
-    CarIdxTrackSurface: { [key: number]: string };
+    CarIdxTrackSurface: { [key: number]: number | string };
     CarIdxTrackSurfaceMaterial: { [key: number]: string };
     CarIdxOnPitRoad: { [key: number]: boolean };
     CarIdxPosition: { [key: number]: number };
