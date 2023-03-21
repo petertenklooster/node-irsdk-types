@@ -3,7 +3,7 @@ declare module 'node-irsdk' {
     SessionTime: number;
     SessionTick: number;
     SessionNum: number;
-    SessionState: number;
+    SessionState: keyof typeof SessionState;
     SessionUniqueID: number;
     SessionFlags: { [key: number]: string };
     SessionTimeRemain: number;
